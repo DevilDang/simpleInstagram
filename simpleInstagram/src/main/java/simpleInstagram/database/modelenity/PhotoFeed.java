@@ -67,6 +67,55 @@ public class PhotoFeed extends BaseEntity {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((imagePath == null) ? 0 : imagePath.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PhotoFeed other = (PhotoFeed) obj;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (imagePath == null) {
+			if (other.imagePath != null)
+				return false;
+		} else if (!imagePath.equals(other.imagePath))
+			return false;
+		return true;
+	}
+	public Set<Comments> getCommnents() {
+		return commnents;
+	}
+	public void setCommnents(Set<Comments> commnents) {
+		this.commnents = commnents;
+	}
+	@Override
+	public String toString() {
+		return "PhotoFeed [id=" + id + ", imagePath=" + imagePath + ", description=" + description + ", getUser()="
+				+ getUser() + ", getCommnents()=" + getCommnents() + "]";
+	}
+	
+	
+	
 	
 	
 	

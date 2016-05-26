@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+	<!-- <property name="hibernate.connection.url">jdbc:mysql://192.168.1.8:3306/dongnam</property> -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/simpleInstagram?useSSL=false</property>
+		<property name="hibernate.connection.autoReconnect">true</property>
+		<property name="hibernate.connection.allowMultiQueries">true</property>
+		<!--  
+		<property name="hibernate.connection.username">loc2013</property>
+		<property name="hibernate.connection.password">Loc@2013</property>
+		-->
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password"></property>
+		<property name="hibernate.connection.characterEncoding">UTF-8</property>
+		<property name="hibernate.connection.useUnicode">true</property>
+		
+		<!-- c3p0 connection pool -->
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.min_size">7</property>
+		<property name="hibernate.c3p0.max_size">53</property>
+		<property name="hibernate.c3p0.timeout">100</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.idle_test_period">1000</property>
+		<property name="hibernate.c3p0.validate">true</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		
+		<!-- Use thread-bound persistence context propagation, scoped to the transaction -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- TODO XXX change this -->
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+		<!-- TODO XXX change this -->
+		<!-- Drop and re-create the database schema on startup -->
+
+		<!-- Names the annotated entity class -->
+		
+		<mapping class="simpleInstagram.database.modelenity.Comments" />
+		<mapping class="simpleInstagram.database.modelenity.FollowRelationship" />
+		<mapping class="simpleInstagram.database.modelenity.PhotoFeed" />
+		<mapping class="simpleInstagram.database.modelenity.User" />
+		
+
+	</session-factory>
+
+</hibernate-configuration>
