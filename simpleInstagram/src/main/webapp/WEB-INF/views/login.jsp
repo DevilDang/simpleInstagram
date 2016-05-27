@@ -13,8 +13,11 @@
 				<div class="col-sm-2"></div>
 				<div class="col-sm-3">
 					<h2>Login</h2>
+					<ul>
+					<li>${error}</li>
+					</ul>
 					<form id="loginForm" method="post" class="form-login"
-						onsubmit="return validateLoginForm();" action="/signin"
+						onsubmit="return validateLoginForm();" action="login"
 						data-toggle="validator" role="form">
 
 						<div class="form-group">
@@ -39,8 +42,11 @@
 
 				<div class="col-sm-3">
 					<h2>Registration</h2>
+					<ul>
+					<li>${mesageSignUp}</li>
+					</ul>
 					<form id="loginForm" method="post" class="form-login"
-						action="/login" data-toggle="validator" role="form">
+						action="signup" data-toggle="validator" role="form">
 
 						<div class="form-group">
 							<label class="sr" for="username">Full Name</label> <input

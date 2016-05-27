@@ -24,11 +24,11 @@ public class TestDatabase {
 		ConfigUtil.init();
 		HibernateUtil.init();
 
-		// createUser();
+		 createUser();
 		// createPhotoFeed();
 		//getListPhoToFeed("dangtanloc2304@gamil.com");
 		//createComments();
-		getListMostPhotoFeed();
+		//getListMostPhotoFeed();
 		// getListCommentsOfaFeed();
 
 	}
@@ -37,7 +37,7 @@ public class TestDatabase {
 
 		User user1 = new User();
 
-		user1.setEmail("dangtanloc2304@gamil.com");
+		user1.setEmail("dangtanloc2304@gmail.com");
 		user1.setName("Dang Tan Loc");
 		user1.setPassword("123456");
 
@@ -58,9 +58,9 @@ public class TestDatabase {
 			session.getTransaction().begin();
 			UserDaoImpl dao = new UserDaoImpl(session);
 
-			// dao.makePersistent(user1);
-			// dao.makePersistent(user2);
-			dao.makePersistent(user3);
+			 dao.makePersistent(user1);
+			 dao.makePersistent(user2);
+			//dao.makePersistent(user3);
 
 			session.getTransaction().commit();
 

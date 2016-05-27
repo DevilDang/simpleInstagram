@@ -1,12 +1,20 @@
 <nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#">Simple Instagram</a>
+		<div class="container">
+			<div class="navbar-header">
+
+				<a class="navbar-brand" href="/"> Instagram
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/profile"><span
+							class="glyphicon glyphicon-user"></span> ${userLogged}</a></li>					
+					<li><a href="logout"><span
+							class="glyphicon glyphicon-log-out"></span> log out</a></li>
+					
+				</ul>
+			</div>
+
 		</div>
-		<ul class="nav navbar-nav">
-			<li><a href="#">Page 1</a></li>
-			<li><a href="#">Page 2</a></li>
-			<li><a href="#">Page 3</a></li>
-		</ul>
-	</div>
 </nav>

@@ -28,6 +28,15 @@ public class UserDaoImpl extends ExtendedGenericDao<User, Long> {
 
 	public boolean authenticate(String email, String password) {
 		// TODO Auto-generated method stub
+		String queryString = "Select user from User user where email=:email and password=:password ";
+		Query query = getSession().createQuery(queryString);
+
+		query.setString("email", email);
+		query.setString("password", password);
+
+		User user = (User) query.uniqueResult();
+		if (user != null)
+			return true;
 		return false;
 	}
 

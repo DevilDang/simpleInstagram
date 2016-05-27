@@ -7,9 +7,9 @@
 
 	<session-factory>
 
-		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 	<!-- <property name="hibernate.connection.url">jdbc:mysql://192.168.1.8:3306/dongnam</property> -->
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/simpleInstagram?useSSL=false</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/simpleInstagram</property>
 		<property name="hibernate.connection.autoReconnect">true</property>
 		<property name="hibernate.connection.allowMultiQueries">true</property>
 		<!--  
@@ -29,7 +29,8 @@
 		<property name="hibernate.c3p0.max_statements">50</property>
 		<property name="hibernate.c3p0.idle_test_period">1000</property>
 		<property name="hibernate.c3p0.validate">true</property>
-
+	
+	
 		<!-- SQL dialect -->
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 

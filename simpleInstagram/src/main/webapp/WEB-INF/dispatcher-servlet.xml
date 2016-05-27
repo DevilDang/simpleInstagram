@@ -29,6 +29,11 @@ http://www.springframework.org/schema/mvc
 			</list>
 		</property>
 	</bean>
+
+	 <bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    </bean>
+
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	<mvc:annotation-driven />
 
