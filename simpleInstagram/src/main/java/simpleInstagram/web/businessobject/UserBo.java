@@ -8,7 +8,7 @@ import simpleInstagram.database.modelenity.User;
 
 public class UserBo {
 	
-   public boolean authenticate(String email,String password){
+   public boolean authenticate(String email,String password) throws Exception{
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		try {
 			UserDaoImpl dao = new UserDaoImpl(session);
@@ -23,10 +23,10 @@ public class UserBo {
 			if (session.isOpen())
 				session.getTransaction().rollback();
 
+			throw e;
 		} finally {
 			session.close();
 		}
-		return false;
    }
    
    public boolean createUser(User user) throws Exception{

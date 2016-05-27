@@ -3,7 +3,6 @@
  */
 $(document).ready(
 		function() {
-			alert("tanloc");
 			$('progress').hide();
 			$('.trigger-file-input').click(function() {
 				$('#file').click();
@@ -39,8 +38,7 @@ $(document).ready(
 							contentType : false,
 							processData : false,
 							success : function(e) {
-								alert(e);
-								$("#result").html(e);
+								$("#uploadedImg").attr("src",e.uploadedFileUrl);
 							}
 
 						});

@@ -14,7 +14,15 @@
 				<div class="col-sm-2">
 					<progress></progress>
 				</div>
-
+	
+			</div>
+			<!-- upload file -->
+			<div class="row">
+				<div class="col-sm-2">
+				<img id="uploadedImg" alt="" src="">
+				</div>
+				
+	
 			</div>
 
 			<!-- description -->

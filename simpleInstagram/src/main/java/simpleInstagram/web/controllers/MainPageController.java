@@ -1,9 +1,6 @@
 package simpleInstagram.web.controllers;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.Iterator;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,42 +11,31 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import simpleInstagram.utils.CommonUtils;
+import simpleInstagram.web.businessobject.HandleFileUpload;
+import simpleInstagram.web.datamodel.FileUploadedInfo;
 
 @Controller
 public class MainPageController {
 
 	private Logger logger = Logger.getLogger(MainPageController.class);
+
 	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
 	@ResponseBody
-	public String uploadMultipleFiles(@RequestParam("file") MultipartFile file,HttpServletRequest request) {
-        String url;
-        String storedFolderLocation = CommonUtils.createStoredFolder(request);
-        logger.debug(storedFolderLocation);
-            String uploadedFileName = file.getOriginalFilename();
-            try {
-                byte[] bytes = file.getBytes();
- 
-                String storedFileLocation = storedFolderLocation + File.separator + uploadedFileName;
-                
-                logger.debug(storedFileLocation);
-                File serverFile = new File(storedFileLocation);
-                BufferedOutputStream stream = new BufferedOutputStream(
-                        new FileOutputStream(serverFile));
-                stream.write(bytes);
-                stream.close();
-                url = CommonUtils.getDomainName(request)
-                        + "/simpleInstagram/resources/uploads/" + uploadedFileName;
-               
-                return url;
- 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-			return uploadedFileName;
+	public FileUploadedInfo uploadMultipleFiles(@RequestParam("file") MultipartFile file,
+			HttpServletRequest request) {
+
+		FileUploadedInfo fileInfos = null;
+		try {
+			fileInfos = HandleFileUpload.saveFileUpload(file, request);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			logger.error(e.getMessage(),e);
+		}
+
+		return fileInfos;
+
 	}
 
 }
