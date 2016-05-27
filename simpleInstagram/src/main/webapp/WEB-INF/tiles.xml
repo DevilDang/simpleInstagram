@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<!-- Base Define -->
+	<definition name="base.definition" template="/WEB-INF/views/layout/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
+		<put-attribute name="customCSSFiles" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="customJavascriptFiles" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+	</definition>
+
+	<!-- Main Page -->
+	<definition name="login" extends="base.definition">
+		<put-attribute name="title" value="Login Page" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="customCSSFiles"
+			value="/WEB-INF/views/layout/login/cssfile.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+		<put-attribute name="customJavascriptFiles"
+			value="/WEB-INF/views/layout/login/javascriptFile.jsp" />
+	</definition>
+	
+	<!-- Main Page -->
+	<definition name="mainpage" extends="base.definition">
+		<put-attribute name="title" value="Home Page" />
+		<put-attribute name="body" value="/WEB-INF/views/mainpage.jsp" />
+		<put-attribute name="customCSSFiles"
+			value="/WEB-INF/views/layout/mainpage/cssfile.jsp" />
+		<put-attribute name="customJavascriptFiles"
+			value="/WEB-INF/views/layout/mainpage/javascriptFile.jsp" />
+	</definition>
+
+	<!-- Profile Page -->
+	<definition name="profile" extends="base.definition">
+		<put-attribute name="title" value="Profile Page" />
+		<put-attribute name="body" value="/WEB-INF/views/profile.jsp" />
+		<put-attribute name="customCSSFiles"
+			value="/WEB-INF/views/layout/profile/cssfile.jsp" />
+		<put-attribute name="customJavascriptFiles"
+			value="/WEB-INF/views/layout/profile/javascriptFile.jsp" />
+
+	</definition>
+
+	<!-- Photofeed Page -->
+	<definition name="photofeed" extends="base.definition">
+		<put-attribute name="title" value="PhotoFeed Page" />
+		<put-attribute name="body" value="/WEB-INF/views/photofeed.jsp" />
+		<put-attribute name="customCSSFiles"
+			value="/WEB-INF/views/layout/photofeed/cssfile.jsp" />
+		<put-attribute name="customJavascriptFiles"
+			value="/WEB-INF/views/layout/photofeed/javascriptFile.jsp" />
+
+	</definition>
+
+
+
+</tiles-definitions>

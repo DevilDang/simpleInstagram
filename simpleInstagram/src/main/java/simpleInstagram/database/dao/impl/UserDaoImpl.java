@@ -26,4 +26,9 @@ public class UserDaoImpl extends ExtendedGenericDao<User, Long> {
 
 	}
 
+	public boolean authenticate(String email, String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
