@@ -3,8 +3,6 @@ package simpleInstagram.web.businessobject;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -38,7 +36,6 @@ public class HandleFileUpload {
 
 			FileUploadedInfo fileInfo = new FileUploadedInfo(uploadedFileName, url);
 		
-
 			return fileInfo;
 
 		} catch (Exception e) {

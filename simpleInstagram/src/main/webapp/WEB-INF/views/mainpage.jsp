@@ -37,10 +37,8 @@
 
 					</div>
 					<input type="hidden" name="uploadedFilename"
-						value="[[photoFeed.uploadedFilename]]"
 						ng-model="photoFeed.uploadedFilename"> <input
 						type="hidden" name="uploadedUrlName"
-						value="[[photoFeed.uploadedUrlName"
 						ng-model="photoFeed.uploadedUrlName">
 
 				</form>
@@ -60,28 +58,26 @@
 		<div class="panel-heading">New Photo Feeds</div>
 		<div class="panel-body">
 
-			<div class="row">
+			<div class="row" ng-repeat="photoFeed in photoFeeds">
 				<!-- User name -->
 				<div class="row">
-					<div class="col-sm-2">Dang tan Loc</div>
+					<div class="col-sm-2">[[photoFeed.username]]</div>
 				</div>
 				<!-- Image -->
 				<div class="row">
 					<div class="col-sm-2">
-						<img id="uploadedImg" alt=""
-							src="http://localhost:8080/simpleInstagram/resources/uploads/1464429373051Capture1.PNG">
+						<img alt="" src="[[photoFeed.imgUrl]]">
 					</div>
 				</div>
 				<!-- description -->
 				<div class="row">
 					<div class="col-sm-2">
-						<span>ddgadhakdjhadadksgqkasjqdgaekjdgajdgadh</span>
+						<span>[[photoFeed.description]]</span>
 					</div>
 				</div>
 
 			</div>
 
-			<br /> <br />
 		</div>
 	</div>
 </div>

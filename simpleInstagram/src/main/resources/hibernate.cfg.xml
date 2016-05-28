@@ -9,17 +9,18 @@
 
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 	<!-- <property name="hibernate.connection.url">jdbc:mysql://192.168.1.8:3306/dongnam</property> -->
-		<property name="hibernate.connection.url">jdbc:mysql://192.168.1.8:3306/simpleInstagram</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/simpleInstagram</property>
  		<property name="hibernate.connection.autoReconnect">true</property>
 		<property name="hibernate.connection.allowMultiQueries">true</property>
 		
-		 
+		 <!-- 
 		<property name="hibernate.connection.username">loc2013</property>
 		<property name="hibernate.connection.password">Loc@2013</property>
-		
-		<!-- <property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password"></property>
 		 -->
+		 
+		 <property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password"></property>
+		
 		 
 		<property name="hibernate.connection.characterEncoding">UTF-8</property>
 		<property name="hibernate.connection.useUnicode">true</property>

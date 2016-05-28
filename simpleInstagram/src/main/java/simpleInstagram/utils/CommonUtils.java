@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 
 public class CommonUtils {
 
+	public static String URL_UPLOAD_FOLDER;
+	public static String DOMAIN_NAME;
+
 	public static String createStoredFolder(HttpServletRequest request) {
 		String realPath = request.getSession().getServletContext().getRealPath("/");
 		String relativePath = "resources\\uploads";
@@ -25,8 +28,23 @@ public class CommonUtils {
 	}
 
 	public static String getDomainName(HttpServletRequest request) {
-		return request.getProtocol().toLowerCase().replaceAll("[0-9./]", "") + "://" + request.getServerName() + ":"
-				+ request.getServerPort();
+
+		if (DOMAIN_NAME == null)
+			DOMAIN_NAME = request.getProtocol().toLowerCase().replaceAll("[0-9./]", "") + "://"
+					+ request.getServerName() + ":" + request.getServerPort();
+		return DOMAIN_NAME;
+
+	}
+
+	public static String getUrlUploadFolder(HttpServletRequest request) {
+
+		if (URL_UPLOAD_FOLDER == null) {
+			URL_UPLOAD_FOLDER = CommonUtils.getDomainName(request) + "/simpleInstagram/resources/uploads/";
+
+		}
+
+		return URL_UPLOAD_FOLDER;
+
 	}
 
 }

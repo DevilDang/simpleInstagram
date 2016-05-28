@@ -33,6 +33,7 @@ public class UserController {
 			if (userbo.authenticate(email, password)) {
 				HttpSession httpSession = request.getSession();
 				httpSession.setAttribute("user", email);
+				
 				logger.debug(email + " was logged");
 				return new ModelAndView("mainpage", "userLogged", email);
 			} else {
