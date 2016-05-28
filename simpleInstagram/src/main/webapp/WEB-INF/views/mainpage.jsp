@@ -66,7 +66,8 @@
 				<!-- Image -->
 				<div class="row">
 					<div class="col-sm-2">
-						<img alt="" src="[[photoFeed.imgUrl]]">
+						<a href="photofeed?feedId=[[photoFeed.feedId]]" ><img alt="" src="[[photoFeed.imgUrl]]"></a>
+
 					</div>
 				</div>
 				<!-- description -->

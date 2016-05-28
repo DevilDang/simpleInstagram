@@ -49,12 +49,9 @@
 		<put-attribute name="title" value="PhotoFeed Page" />
 		<put-attribute name="body" value="/WEB-INF/views/photofeed.jsp" />
 		<put-attribute name="customCSSFiles"
-			value="/WEB-INF/views/layout/photofeed/cssfile.jsp" />
+			value="/WEB-INF/views/layout/photofeed/cssfile.photofeed.jsp" />
 		<put-attribute name="customJavascriptFiles"
-			value="/WEB-INF/views/layout/photofeed/javascriptFile.jsp" />
+			value="/WEB-INF/views/layout/photofeed/javascriptFile.photofeed.jsp" />
 
 	</definition>
-
-
-
 </tiles-definitions>
