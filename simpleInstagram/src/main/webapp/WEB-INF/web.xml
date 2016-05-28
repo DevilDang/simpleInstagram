@@ -22,25 +22,17 @@
 	</servlet-mapping>
 
 	<filter>
-		<filter-name>authenticateFilter</filter-name>
-		<filter-class>simpleInstagram.web.filters.AuthenticateFilter</filter-class>
-	</filter>
-	<filter>
-		<description>
-		</description>
 		<display-name>AuthenticateFilter</display-name>
 		<filter-name>AuthenticateFilter</filter-name>
 		<filter-class>simpleInstagram.web.filters.AuthenticateFilter</filter-class>
 	</filter>
 	<filter-mapping>
-		<filter-name>authenticateFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	<filter-mapping>
 		<filter-name>AuthenticateFilter</filter-name>
-		<url-pattern>/AuthenticateFilter</url-pattern>
+		<url-pattern>/mainpage</url-pattern>
+		<url-pattern>/photofeed</url-pattern>
+		<url-pattern>/profile</url-pattern>
 	</filter-mapping>
-
+	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>

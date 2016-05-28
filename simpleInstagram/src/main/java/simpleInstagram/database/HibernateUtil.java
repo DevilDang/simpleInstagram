@@ -30,5 +30,18 @@ public class HibernateUtil {
 	public static SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
+	
+	/**
+	 * Closes the current SessionFactory and releases all resources.
+	 * <p>
+	 * The only other method that can be called on HibernateUtil after this one
+	 * is rebuildSessionFactory(Configuration).
+	 */
+	public static void shutdown() {
+		// Close caches and connection pools
+		getSessionFactory().close();
+		// Clear static variables
+		sessionFactory = null;
+	}
 
 }

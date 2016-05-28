@@ -14,15 +14,13 @@
 		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
 	</definition>
 
-	<!-- Main Page -->
+	<!-- login Page -->
 	<definition name="login" extends="base.definition">
 		<put-attribute name="title" value="Login Page" />
 		<put-attribute name="header" value="" />
 		<put-attribute name="customCSSFiles"
-			value="/WEB-INF/views/layout/login/cssfile.jsp" />
+			value="/WEB-INF/views/layout/login/cssfile.login.jsp" />
 		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
-		<put-attribute name="customJavascriptFiles"
-			value="/WEB-INF/views/layout/login/javascriptFile.jsp" />
 	</definition>
 	
 	<!-- Main Page -->
@@ -30,9 +28,9 @@
 		<put-attribute name="title" value="Home Page" />
 		<put-attribute name="body" value="/WEB-INF/views/mainpage.jsp" />
 		<put-attribute name="customCSSFiles"
-			value="/WEB-INF/views/layout/mainpage/cssfile.jsp" />
+			value="/WEB-INF/views/layout/mainpage/cssfile.mainpage.jsp" />
 		<put-attribute name="customJavascriptFiles"
-			value="/WEB-INF/views/layout/mainpage/javascriptFile.jsp" />
+			value="/WEB-INF/views/layout/mainpage/javascriptFile.mainpage.jsp" />
 	</definition>
 
 	<!-- Profile Page -->

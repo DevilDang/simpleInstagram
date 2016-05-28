@@ -44,18 +44,15 @@ public class AuthenticateFilter implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 
-		String url = req.getRequestURL().toString();
-		if (url.contains("login") || url.contains("resources")) {
-			chain.doFilter(request, response);
-		} else {
-			String email = (String) req.getSession().getAttribute("user");
-			if (email == null) {
+		String email = (String) req.getSession().getAttribute("user");
+		if (email == null) {
 
-				res.sendRedirect("login");
-			} else {
-				chain.doFilter(request, response);
-			}
+			res.sendRedirect("login");
+		} else {
+			chain.doFilter(request, response);
 		}
+		
+		
 
 	}
 

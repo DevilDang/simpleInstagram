@@ -4,9 +4,6 @@
 $(document).ready(
 		function() {
 			$('progress').hide();
-			$('.trigger-file-input').click(function() {
-				$('#file').click();
-			});
 			$("input:file").change(
 					function() {
 						$('progress').show();
@@ -38,7 +35,9 @@ $(document).ready(
 							contentType : false,
 							processData : false,
 							success : function(e) {
-								$("#uploadedImg").attr("src",e.uploadedFileUrl);
+								$("#uploadedImg").attr("src",e.uploadedFileUrl);								
+								$("#photoFeed input[name=uploadedFilename]").val(e.uploadedFileName);
+								$("#photoFeed input[name=uploadedUrlName]").val(e.uploadedFileUrl);
 							}
 
 						});
