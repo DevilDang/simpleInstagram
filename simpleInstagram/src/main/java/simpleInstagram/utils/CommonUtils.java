@@ -46,7 +46,7 @@ public class CommonUtils {
 	public static String getUrlUploadFolder(HttpServletRequest request) {
 
 		if (URL_UPLOAD_FOLDER == null) {
-			URL_UPLOAD_FOLDER = CommonUtils.getDomainName(request) +  "simpleInstagram/resources/uploads/";
+			URL_UPLOAD_FOLDER = CommonUtils.getDomainName(request) +  "/simpleInstagram/resources/uploads/";
 
 		}
 
