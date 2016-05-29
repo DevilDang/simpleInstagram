@@ -152,16 +152,18 @@ public class PhotoFeedBo {
 	}
 	
 	
-	public List<CommentInfo> getListComments(HttpServletRequest request) throws Exception {
+	public List<CommentInfo> getListComments(String photoFeedID,HttpServletRequest request) throws Exception {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		try {
-			CommentsDaoImpl dao = new CommentsDaoImpl(session);
-
-			List<Comments> listcomments = dao.findAll("updateDate", OrderType.DESCENDING.name());
+			PhotoFeedDaoImpl photoFeedDao = new PhotoFeedDaoImpl(session);
+			
+			PhotoFeed feed = photoFeedDao.getById(Long.parseLong(photoFeedID), false);
+			Set<Comments> comments =  feed.getCommnents();
+			
 			List<CommentInfo> listCommentInfo = new ArrayList<CommentInfo>();
-			for (int i = 0; i < listcomments.size(); i++) {
-				User user = listcomments.get(i).getUser();
-				String content = listcomments.get(i).getContent();
+			for (Comments comment : comments) {
+				User user = comment.getUser();
+				String content = comment.getContent();
 
 				listCommentInfo.add(new CommentInfo(user.getName(),content ));
 			}

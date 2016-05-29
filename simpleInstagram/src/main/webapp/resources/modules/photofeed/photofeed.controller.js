@@ -37,7 +37,7 @@ angular
 									
 									if(noError){
 										
-										PhotoFeedService.getListComments(function(noError,data){
+										PhotoFeedService.getListComments(window.photoFeedID,function(noError,data){
 											
 											if(noError){
 												$scope.comments = data;

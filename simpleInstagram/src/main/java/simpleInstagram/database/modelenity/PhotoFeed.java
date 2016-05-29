@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -40,6 +41,7 @@ public class PhotoFeed extends BaseEntity {
 	private User user;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "photoFeed",cascade = CascadeType.ALL)
+	@OrderBy("updateDate")
 	private Set<Comments> commnents;
 	
 	

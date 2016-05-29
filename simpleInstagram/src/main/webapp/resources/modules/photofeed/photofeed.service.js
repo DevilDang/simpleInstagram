@@ -4,13 +4,10 @@
 angular.module('photoFeedPage').service('PhotoFeedService',
 		[ '$http', function($http) {
 
-			this.getListComments = function(callBack) {
+			this.getListComments = function(photoFeedID,callBack) {
 				$http({
-					method : 'POST',
-					url : 'getListComments',
-					headers : {
-						'Content-Type' : 'application/json'
-					}
+					method : 'GET',
+					url : 'getListComments?photoFeedID='+photoFeedID
 				}).then(function successCallback(response) {
 					// this callback will be called asynchronously
 					// when the response is available

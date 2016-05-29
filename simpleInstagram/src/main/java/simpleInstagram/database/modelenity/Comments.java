@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Comments")
-public class Comments extends BaseEntity{
+public class Comments extends BaseEntity implements Comparable<Comments>{
 
 	/**
 	 * 
@@ -104,6 +104,12 @@ public class Comments extends BaseEntity{
 	public String toString() {
 		return "Comments [id=" + id + ", content=" + content + ", getPhotoFeed()=" + getPhotoFeed() + ", getUser()="
 				+ getUser() + "]";
+	}
+
+	@Override
+	public int compareTo(Comments o) {
+		// TODO Auto-generated method stub
+		return this.getUpdateDate().compareTo(o.getUpdateDate());
 	}
 
 	

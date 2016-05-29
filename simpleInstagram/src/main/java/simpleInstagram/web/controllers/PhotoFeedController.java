@@ -77,14 +77,14 @@ public class PhotoFeedController {
 	}
 	
 	
-	@RequestMapping(value = "/getListComments", method = RequestMethod.POST)
+	@RequestMapping(value = "/getListComments", method = RequestMethod.GET)
 	@ResponseBody
-	public List<CommentInfo> getListComments(HttpServletRequest request) {
+	public List<CommentInfo> getListComments(@RequestParam String photoFeedID,HttpServletRequest request) {
 
 		PhotoFeedBo bo = new PhotoFeedBo();
 		List<CommentInfo> CommentInfos = null;
 		try {
-			CommentInfos = bo.getListComments(request);
+			CommentInfos = bo.getListComments(photoFeedID,request);
 			return CommentInfos;
 
 		} catch (Exception e) {
