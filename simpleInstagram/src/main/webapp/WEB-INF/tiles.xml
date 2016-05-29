@@ -52,6 +52,17 @@
 			value="/WEB-INF/views/layout/photofeed/cssfile.photofeed.jsp" />
 		<put-attribute name="customJavascriptFiles"
 			value="/WEB-INF/views/layout/photofeed/javascriptFile.photofeed.jsp" />
-
 	</definition>
+	
+	<!-- Photofeed Page -->
+	<definition name="hashtagresult" extends="base.definition">
+		<put-attribute name="title" value="Hashtag Result Page" />
+		<put-attribute name="body" value="/WEB-INF/views/hashtagResult.jsp" />
+		<put-attribute name="customCSSFiles"
+			value="/WEB-INF/views/layout/hashtagResult/cssfile.hashtagResult.jsp" />
+		<put-attribute name="customJavascriptFiles"
+			value="/WEB-INF/views/layout/hashtagResult/javascriptFile.hashtagResult.jsp" />
+	</definition>
+	
+	
 </tiles-definitions>

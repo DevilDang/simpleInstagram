@@ -1,12 +1,19 @@
 package simpleInstagram.utils;
 
 import java.io.File;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.log4j.Logger;
+
+import simpleInstagram.web.controllers.MainPageController;
+
 public class CommonUtils {
 
+	private static Logger logger = Logger.getLogger(CommonUtils.class);
+	
 	public static String URL_UPLOAD_FOLDER;
 	public static String DOMAIN_NAME;
 
@@ -45,6 +52,25 @@ public class CommonUtils {
 
 		return URL_UPLOAD_FOLDER;
 
+	}
+	
+	public static String replaceHashtag(String description){
+		//String str="#important thing in #any programming #7#& ";
+		//System.out.println(description.replace("#important", "a"));
+		Pattern MY_PATTERN = Pattern.compile("#(\\S+)");
+		Matcher matcher = MY_PATTERN.matcher(description);
+		
+		while (matcher.find()) {
+		  String tag = matcher.group(0);
+		  String tag1 = matcher.group(1);
+		  description = description.replace(tag, "<a href=\"hashtagresult?hashtag="+tag1+"\">"+tag+"</a>");
+		  
+		}
+		
+		logger.debug(description);
+		
+		return description;
+		
 	}
 
 }

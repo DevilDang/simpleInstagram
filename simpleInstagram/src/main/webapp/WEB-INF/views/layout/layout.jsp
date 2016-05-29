@@ -30,6 +30,9 @@
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script type="text/javascript"
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script type="text/javascript"
+		src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.js"></script>	
+		
 	<tiles:insertAttribute name="customJavascriptFiles" />
 </body>
 </html>

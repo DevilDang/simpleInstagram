@@ -31,6 +31,8 @@
 		<url-pattern>/mainpage</url-pattern>
 		<url-pattern>/photofeed</url-pattern>
 		<url-pattern>/profile</url-pattern>
+		<url-pattern>/hashtagresult</url-pattern>
+		
 	</filter-mapping>
 	
 	<context-param>

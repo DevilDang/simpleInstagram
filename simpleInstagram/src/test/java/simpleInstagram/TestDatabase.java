@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.junit.Test;
 
@@ -24,12 +26,13 @@ public class TestDatabase {
 		ConfigUtil.init();
 		HibernateUtil.init();
 
-		 createUser();
+		// createUser();
 		// createPhotoFeed();
 		//getListPhoToFeed("dangtanloc2304@gamil.com");
 		//createComments();
 		//getListMostPhotoFeed();
 		// getListCommentsOfaFeed();
+		 searchString();
 
 	}
 
@@ -239,6 +242,30 @@ public class TestDatabase {
 			session.close();
 		}
 
+	}
+	
+	public void searchString(){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		try {
+			session.getTransaction().begin();
+		    String query = "select * from PhotoFeed as pf having POSITION('#tanloc' IN pf.description) > 0";
+		    SQLQuery ex =	session.createSQLQuery(query);
+		    ex.addEntity(PhotoFeed.class);
+			List<PhotoFeed> list = ex.list();
+			
+			System.out.println(list.get(0).getDescription());
+		    
+		    session.getTransaction().commit();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+			if (session.isOpen())
+				session.getTransaction().rollback();
+
+		} finally {
+			session.close();
+		}
 	}
 
 	

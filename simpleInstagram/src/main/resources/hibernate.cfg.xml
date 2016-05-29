@@ -13,11 +13,11 @@
  		<property name="hibernate.connection.autoReconnect">true</property>
 		<property name="hibernate.connection.allowMultiQueries">true</property>
 		
-		 <!-- 
+		  <!-- 
 		<property name="hibernate.connection.username">loc2013</property>
 		<property name="hibernate.connection.password">Loc@2013</property>
-		 -->
-		 
+		  -->
+		
 		 <property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password"></property>
 		

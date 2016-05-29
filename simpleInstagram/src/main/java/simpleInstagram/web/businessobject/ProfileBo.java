@@ -60,8 +60,9 @@ public class ProfileBo {
 			for (PhotoFeed photoFeed : photoFeeds) {
 
 				String imgUrl = CommonUtils.getUrlUploadFolder(request) + photoFeed.getImagePath();
+				String description = CommonUtils.replaceHashtag( photoFeed.getDescription());
 				Long feedId = photoFeed.getId();
-				FeedInfo feedInfo = new FeedInfo(user.getName(), photoFeed.getDescription(), imgUrl, feedId);
+				FeedInfo feedInfo = new FeedInfo(user.getName(), description, imgUrl, feedId);
 				listFeedInfo.add(feedInfo);
 			}
 

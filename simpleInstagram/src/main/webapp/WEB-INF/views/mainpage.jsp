@@ -73,7 +73,7 @@
 				<!-- description -->
 				<div class="row">
 					<div class="col-sm-2">
-						<span>[[photoFeed.description]]</span>
+					 <p ng-bind-html="photoFeed.description"></p>
 					</div>
 				</div>
 

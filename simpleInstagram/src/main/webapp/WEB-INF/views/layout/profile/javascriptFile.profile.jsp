@@ -16,7 +16,7 @@
 <script type="text/javascript">
 	var mainApplicationModuleName = 'simpleInstagram';
 	var mainApplicationModule = angular.module(mainApplicationModuleName,
-			[ 'profilePage' ], function($interpolateProvider) {
+			[ 'profilePage','ngSanitize' ], function($interpolateProvider) {
 				$interpolateProvider.startSymbol('[[');
 				$interpolateProvider.endSymbol(']]');
 			});

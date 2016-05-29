@@ -1,8 +1,6 @@
 package simpleInstagram.web.controllers;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -33,7 +31,7 @@ public class MainPageController {
 	public ModelAndView rennderMainPage(HttpServletRequest request) {
 		
 		String email = (String) request.getSession().getAttribute("user");	
-		return new ModelAndView("photofeed", "userLogged",email);
+		return new ModelAndView("mainpage", "userLogged",email);
 	}
 	
 	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
