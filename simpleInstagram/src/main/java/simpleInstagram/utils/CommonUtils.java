@@ -19,7 +19,7 @@ public class CommonUtils {
 
 	public static String createStoredFolder(HttpServletRequest request) {
 		String realPath = request.getSession().getServletContext().getRealPath("/");
-		String relativePath = "resources\\uploads";
+		String relativePath = "resources"+ File.separator+ "uploads";
 		String storedFolderLocation = realPath + relativePath;
 		File dir = new File(storedFolderLocation);
 		if (!dir.exists()) {
@@ -46,7 +46,7 @@ public class CommonUtils {
 	public static String getUrlUploadFolder(HttpServletRequest request) {
 
 		if (URL_UPLOAD_FOLDER == null) {
-			URL_UPLOAD_FOLDER = CommonUtils.getDomainName(request) + "/simpleInstagram/resources/uploads/";
+			URL_UPLOAD_FOLDER = CommonUtils.getDomainName(request) +  "simpleInstagram/resources/uploads/";
 
 		}
 
