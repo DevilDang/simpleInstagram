@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="container-fluid">
 	<div class="center">
 	
@@ -12,9 +13,10 @@
 				<div class="col-sm-2"></div>
 				<div class="col-sm-3">
 					<h2>Login</h2>
+					<c:if test="${not empty error}">
 					<ul>
 					<li>${error}</li>
-					</ul>
+					</ul></c:if>
 					<form id="loginForm" method="post" class="form-login"
 						onsubmit="return validateLoginForm();" action="login"
 						data-toggle="validator" role="form">
@@ -41,9 +43,11 @@
 
 				<div class="col-sm-3">
 					<h2>Registration</h2>
+					<c:if test="${not empty mesageSignUp}">
 					<ul>
 					<li>${mesageSignUp}</li>
 					</ul>
+					</c:if>
 					<form id="loginForm" method="post" class="form-login"
 						action="signup" data-toggle="validator" role="form">
 
