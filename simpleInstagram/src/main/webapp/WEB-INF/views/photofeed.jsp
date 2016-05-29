@@ -20,7 +20,9 @@
 
 					<!-- description -->
 					<div class="row">
-						<div class="col-sm-12">Description: [[description]]</div>
+						<div class="col-sm-12">Description: <p ng-bind-html="description"></p>
+						
+						</div>
 					</div>
 
 					<!-- Add comment -->
