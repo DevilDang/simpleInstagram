@@ -46,6 +46,13 @@ angular
 								$('progress').hide();
 								var file = document.getElementById('file');
 								file.value="";
+								 $(
+									"#photoFeed input[name=uploadedUrlName]")
+									.val("");
+								 
+								 $(
+									"#photoFeed input[name=uploadedFilename]")
+									.val("");
 							}
 
 							$scope.createPhotoFeed = function() {
