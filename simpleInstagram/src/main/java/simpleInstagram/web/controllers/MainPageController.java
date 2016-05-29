@@ -1,5 +1,6 @@
 package simpleInstagram.web.controllers;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -13,20 +14,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import simpleInstagram.database.modelenity.PhotoFeed;
 import simpleInstagram.web.businessobject.HandleFileUpload;
 import simpleInstagram.web.businessobject.PhotoFeedBo;
-import simpleInstagram.web.datamodel.Feed;
-import simpleInstagram.web.datamodel.FeedInfo;
-import simpleInstagram.web.datamodel.FileUploadedInfo;
-import simpleInstagram.web.datamodel.ResponseMesage;
+import simpleInstagram.web.datamodel.request.Feed;
+import simpleInstagram.web.datamodel.response.FeedInfo;
+import simpleInstagram.web.datamodel.response.FileUploadedInfo;
+import simpleInstagram.web.datamodel.response.ResponseMesage;
 
 @Controller
 public class MainPageController {
 
 	private Logger logger = Logger.getLogger(MainPageController.class);
 
+	@RequestMapping(value = { "/mainpage" }, method = RequestMethod.GET)
+	public ModelAndView rennderMainPage(HttpServletRequest request) {
+		
+		String email = (String) request.getSession().getAttribute("user");	
+		return new ModelAndView("photofeed", "userLogged",email);
+	}
+	
 	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
 	@ResponseBody
 	public FileUploadedInfo uploadMultipleFiles(@RequestParam("file") MultipartFile file, HttpServletRequest request) {

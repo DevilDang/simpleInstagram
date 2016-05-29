@@ -17,8 +17,8 @@ import simpleInstagram.database.modelenity.Comments;
 import simpleInstagram.database.modelenity.PhotoFeed;
 import simpleInstagram.database.modelenity.User;
 import simpleInstagram.utils.CommonUtils;
-import simpleInstagram.web.datamodel.CommentInfo;
-import simpleInstagram.web.datamodel.FeedInfo;
+import simpleInstagram.web.datamodel.response.CommentInfo;
+import simpleInstagram.web.datamodel.response.FeedInfo;
 
 public class PhotoFeedBo {
 

@@ -1,4 +1,4 @@
-package simpleInstagram.web.datamodel;
+package simpleInstagram.web.datamodel.request;
 
 public class Feed {
 	

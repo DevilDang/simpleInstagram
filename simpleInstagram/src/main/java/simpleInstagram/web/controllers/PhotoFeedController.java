@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import simpleInstagram.web.businessobject.PhotoFeedBo;
-import simpleInstagram.web.datamodel.CommentInfo;
-import simpleInstagram.web.datamodel.FeedInfo;
-import simpleInstagram.web.datamodel.ResponseMesage;
+import simpleInstagram.web.datamodel.response.CommentInfo;
+import simpleInstagram.web.datamodel.response.FeedInfo;
+import simpleInstagram.web.datamodel.response.ResponseMesage;
 
 @Controller
 public class PhotoFeedController {

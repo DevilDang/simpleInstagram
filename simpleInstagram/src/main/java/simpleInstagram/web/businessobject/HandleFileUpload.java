@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import simpleInstagram.utils.CommonUtils;
 import simpleInstagram.web.controllers.MainPageController;
-import simpleInstagram.web.datamodel.FileUploadedInfo;
+import simpleInstagram.web.datamodel.response.FileUploadedInfo;
 
 public class HandleFileUpload {
 

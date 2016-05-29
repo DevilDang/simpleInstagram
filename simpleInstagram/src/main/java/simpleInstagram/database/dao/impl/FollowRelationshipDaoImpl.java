@@ -11,5 +11,13 @@ public class FollowRelationshipDaoImpl extends GenericDao<FollowRelationship, Lo
 		super(session);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public int countFollower(Long userid){
+		return 0;
+	}
+	
+	public int countFollowing(Long userid){
+		return 0;
+	}
 
 }
