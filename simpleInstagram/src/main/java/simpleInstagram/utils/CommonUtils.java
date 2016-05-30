@@ -1,6 +1,8 @@
 package simpleInstagram.utils;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,16 +36,19 @@ public class CommonUtils {
 
 	}
 
-	public static String getDomainName(HttpServletRequest request) {
+	public static String getDomainName(HttpServletRequest request) throws MalformedURLException {
 
-		if (DOMAIN_NAME == null)
-			DOMAIN_NAME = request.getProtocol().toLowerCase().replaceAll("[0-9./]", "") + "://"
-					+ request.getServerName() + ":" + request.getServerPort();
+		if (DOMAIN_NAME == null){
+			 URL requestURL = new URL(request.getRequestURL().toString());
+			 String port = requestURL.getPort() == -1 ? "" : ":" + requestURL.getPort();
+			 DOMAIN_NAME = requestURL.getProtocol() + "://" + requestURL.getHost() + port;
+			 logger.debug(DOMAIN_NAME);
+		}
 		return DOMAIN_NAME;
 
 	}
 
-	public static String getUrlUploadFolder(HttpServletRequest request) {
+	public static String getUrlUploadFolder(HttpServletRequest request) throws MalformedURLException {
 
 		if (URL_UPLOAD_FOLDER == null) {
 			URL_UPLOAD_FOLDER = CommonUtils.getDomainName(request) +  "/simpleInstagram/resources/uploads/";
